@@ -1,6 +1,8 @@
 // faccio sciegliere all'utente pari o dispari
 const userChoice = prompt('Pari o Dispari?');
-console.log('Hai scelto:', userChoice);
+console.log('Hai scelto:', userChoice, typeof userChoice);
+
+
 /* 
 let pari = [
     Pari,
@@ -29,7 +31,7 @@ do {
 // faccio inserire all'utente un numero tra 1 e 5
 
 const userNumb = parseInt(prompt('Scegli un numero tra 1 e 5'));
-if (userNumb >=1 && userNumb <= 5) {
+if (userNumb >= 1 && userNumb <= 5) {
     console.log('Numero utente scelto:', userNumb, typeof userNumb);
 }
 else {
@@ -39,19 +41,24 @@ else {
 
 /* const min = 1;
 const max = 5; */
+const numberCpu = randomCpuNum();
+console.log('numberCpu', numberCpu, typeof numberCpu);
 
 function randomCpuNum(min, max) {
     return Math.floor(Math.random() * (5) ) + 1;
 }
 
-const numberCpu = randomCpuNum();
-console.log('numberCpu', numberCpu, typeof numberCpu);
+
 
 
 // sommo numero utente e numero random
-function sum(numberCpu, userNumb) {
-    return parseInt(numberCpu + userNumb);
+const sum = numberCpu + userNumb;
+console.log('somma dei numeri:', sum, typeof sum);
+
+if (sum % 2 == 0) {
+    alert('ha vinto PARI');
 }
-const sumNum = parseInt(sum());
-console.log('La somma dei due numeri è:', sumNum);
-// in base a cosa sceglie l'utente dichiara chi vince
+else {
+    alert('ha vinto DISPARI');
+}
+// in base a cosa sceglie l'utente dichiara chi vince  
